@@ -74,7 +74,9 @@ app.post('/removeImage', authCheckMiddleware, (req, res) => {
   })
 })
 
-httpServer.listen(process.env.PORT, () => {
-  console.log('Rest server started at: ', `http://localhost:${process.env.PORT}/`);
-  console.log('GQL server started at: ', `http://localhost:${process.env.PORT}/graphql`)
+const port = process.env.PORT || 3001
+console.log('Using port=====>', port)
+httpServer.listen(port, () => {
+  console.log('Rest server started at: ', `http://localhost:${port}/`);
+  console.log('GQL server started at: ', `http://localhost:${port}/graphql`)
 })
